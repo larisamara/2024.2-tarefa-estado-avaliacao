@@ -84,12 +84,16 @@ continue o preenchimento da tabela abaixo, considerando que o sistema operaciona
 | 04   | ex    | --         | pr         | no         | t1, t2     |
 | 05   | ex t1 | --         | --         | pr         | t2, t3     |
 | 06   | --    | ex linha 1 | --         | --         | t2, t3     |
-| 07   | ex t2 | su 1       | --         | --         | t2, t3     |
-| 08   | --    | su 2       | ex linha 1 | --         | t3         |
-| 09   | ex t3 | pr         | su 1       | --         | t1         |
-| 10   | --    | --         | su 2       | ex linha 1 | t1         |
-| 11   | ??    | ??         | ??         | ??         | t1         |
-| 12   | ??    | ??         | ??         | ??         | t1         |
+| 07   | ex t1 | ex linha 2 | --         | --         | t2, t3     |
+| 08   | ex t1 | ex linha 3 | --         | --         | t2, t3     |
+| 09   | ex t1 | ex linha 4 | --         | --         | t2, t3     |
+| 10   | ex t2 | fi         | su 1       | --         | t3         |
+| 11   | ex t2 | fi         | su 2       | --         | t3         |
+| 12   | ex t3 | fi         | fi         | ex linha 1 | --         |
+| 13   | ex t3 | fi         | fi         | ex linha 2 | --         |
+| 14   | ex t3 | fi         | fi         | ex linha 3 | --         |
+| 15   | ex t3 | fi         | fi         | ex linha 4 | --         |
+| 16   | fi    | fi         | fi         | fi         | --         |
 
 ## Tarefa 2 - fatia tempo com valor 10 ticks
 
@@ -102,10 +106,15 @@ continue o preenchimento da tabela abaixo, considerando que o sistema operaciona
 | 03   | ex    | pr         | no         | --         | t1         |
 | 04   | ex    | --         | pr         | no         | t1, t2     |
 | 05   | ex t1 | --         | --         | pr         | t2, t3     |
-| 06   | --    | ex linha 1 | --         | --         | t2, t3     |
-| 07   | ex t2 | su 1       | --         | --         | t2, t3     |
-| 08   | --    | su 2       | ex linha 1 | --         | t3         |
-| 09   | ex t3 | pr         | su 1       | --         | t1         |
-| 10   | --    | --         | su 2       | ex linha 1 | t1         |
-| 11   | ??    | ??         | ??         | ??         | t1         |
-| 12   | ??    | ??         | ??         | ??         | t1         |
+| 06-09| ex t1 | ex linha 1 | --         | pr         | t2, t3     |
+| 10-13| ex t1 | ex linha 2 | --         | pr         | t2, t3     |
+| 14-17| ex t1 | ex linha 3 | --         | pr         | t2, t3     |
+| 18-21| ex t1 | ex linha 4 | --         | pr         | t2, t3     |
+| 22   | ex t2 | fi         | su 1       | pr         | t3         |
+| 23-26| ex t2 | fi         | su 2       | pr         | t3         |
+| 27   | ex t3 | fi         | fi         | ex linha 1 | --         |
+| 28-31| ex t3 | fi         | fi         | ex linha 2 | --         |
+| 32-35| ex t3 | fi         | fi         | ex linha 3 | --         |
+| 36-39| ex t3 | fi         | fi         | ex linha 4 | --         |
+| 40   | fi    | fi         | fi         | fi         | --         |
+
